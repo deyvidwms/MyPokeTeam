@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
 
   useEffect(() => { 
     setYear( String( new Date().getFullYear() ) );
-  });
+  }, []);
 
   return (
     <Container>
