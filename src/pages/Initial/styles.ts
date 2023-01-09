@@ -30,9 +30,13 @@ export const Column = styled.div`
   flex-direction: column;
   justify-content: ${(props: AlignmentProps) => (props.horizontalAlign)};
   align-items: ${(props: AlignmentProps) => (props.verticalAlign)};
+  
+  @media (max-width: 1040px) {
+    padding: 0 25px;
+  }
 `;
 
-export const Section = styled.div`
+export const Section = styled.section`
   display: flex;
   flex-direction: row;
 `;

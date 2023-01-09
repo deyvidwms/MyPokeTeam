@@ -30,6 +30,10 @@ export const Container = styled.div`
       transform: scale(1.05);
     }
   }
+
+  @media (max-width: 400px) {
+    box-shadow: none;
+  }
 `;
 
 export const ChosedPokemonList = styled.div`

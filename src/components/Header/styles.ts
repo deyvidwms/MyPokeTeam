@@ -17,6 +17,14 @@ export const Container = styled.div`
     font-weight: 900;
     color: #333;
   }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+
+    h1 {
+      margin-bottom: 15px;
+    }
+  }
 `;
 
 export const ThemeMode = styled.div`
