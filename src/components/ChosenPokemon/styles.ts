@@ -51,4 +51,10 @@ export const OptionButtons = styled.div`
       background: #CCC;
     }
   }
+
+  @media(max-width: 686px) {
+    flex-direction: column;
+    width: 300px;
+    gap: 0;
+  }
 `;
