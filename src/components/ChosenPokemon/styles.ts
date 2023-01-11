@@ -12,6 +12,23 @@ export const Container = styled.div`
   border-radius: 6px;
   box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
 
+  @media (max-width: 400px) {
+    box-shadow: none;
+  }
+`;
+
+export const ChosedPokemonList = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+`;
+
+export const OptionButtons = styled.div`
+  display: flex;
+  gap: 10px;
+
   button {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
@@ -29,17 +46,9 @@ export const Container = styled.div`
       opacity: 0.9;
       transform: scale(1.05);
     }
-  }
 
-  @media (max-width: 400px) {
-    box-shadow: none;
+    &:first-child {
+      background: #CCC;
+    }
   }
-`;
-
-export const ChosedPokemonList = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
 `;

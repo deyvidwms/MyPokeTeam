@@ -50,9 +50,13 @@ const Initial: React.FC = () => {
             return element;
           }
           return element;
-        } 
+        }
       )
     );
+  }
+
+  const handleClearPokeTeam = () => {
+    setPokeTeam(dataDefault);
   }
 
   return (
@@ -77,6 +81,7 @@ const Initial: React.FC = () => {
             <ChosenPokemon 
               pokeTeam={pokeTeam} 
               handleRemovePokemon={handleRemovePokemon} 
+              handleClearPokeTeam={handleClearPokeTeam}
             />
           </Column>
         </Row>

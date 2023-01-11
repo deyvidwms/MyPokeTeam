@@ -2,14 +2,15 @@ import React from 'react';
 import { Pokemon } from '../../types/Pokemon';
 import ChosedPokemon from './ChosedPokemon';
 
-import { ChosedPokemonList, Container } from './styles';
+import { ChosedPokemonList, Container, OptionButtons } from './styles';
 
 type Props = {
   pokeTeam: Pokemon[];
   handleRemovePokemon: (pokemon: Pokemon, pokeTeam: Pokemon[]) => void;
+  handleClearPokeTeam: () => void;
 }
 
-const ChosenPokemon: React.FC<Props> = ({ pokeTeam, handleRemovePokemon }) => {
+const ChosenPokemon: React.FC<Props> = ({ pokeTeam, handleRemovePokemon, handleClearPokeTeam }) => {
   return (
     <Container>
       <ChosedPokemonList>
@@ -29,7 +30,10 @@ const ChosenPokemon: React.FC<Props> = ({ pokeTeam, handleRemovePokemon }) => {
         }
       </ChosedPokemonList>
 
-      <button>Confirmar</button>
+      <OptionButtons>
+        <button onClick={() => handleClearPokeTeam()}>Limpar</button>
+        <button>Confirmar</button>
+      </OptionButtons>
     </Container>
   );
 }
