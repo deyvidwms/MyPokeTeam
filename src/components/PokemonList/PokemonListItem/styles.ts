@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type Props = {
+  active?: boolean;
+}
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,6 +17,7 @@ export const Container = styled.div`
   background-color: #E2EAFC;
   border-radius: 6px;
   box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+  cursor: pointer;
 
   @media (max-width: 1280px) {
     flex-basis: initial;

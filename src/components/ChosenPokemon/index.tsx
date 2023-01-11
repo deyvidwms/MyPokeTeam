@@ -1,20 +1,34 @@
 import React from 'react';
+import { Pokemon } from '../../types/Pokemon';
 import ChosedPokemon from './ChosedPokemon';
 
 import { ChosedPokemonList, Container } from './styles';
 
-const ChosenPokemon: React.FC = () => {
+type Props = {
+  pokeTeam: Pokemon[];
+  handleRemovePokemon: (pokemon: Pokemon, pokeTeam: Pokemon[]) => void;
+}
+
+const ChosenPokemon: React.FC<Props> = ({ pokeTeam, handleRemovePokemon }) => {
   return (
     <Container>
       <ChosedPokemonList>
-        <ChosedPokemon key="1" active={true} />
-        <ChosedPokemon key="2" />
-        <ChosedPokemon key="3" />
-        <ChosedPokemon key="4" />
-        <ChosedPokemon key="5" />
-        <ChosedPokemon key="6" />
+        {
+          pokeTeam.map(
+            (element, index) => {
+              const indice = pokeTeam.findIndex(element => element.isEmpty);
+              return <ChosedPokemon
+                key={index + 1}
+                pokeInfo={element}
+                active={indice === index}
+                handleRemovePokemon={handleRemovePokemon}
+                pokeTeam={pokeTeam}
+              />
+            }
+          )
+        }
       </ChosedPokemonList>
-      
+
       <button>Confirmar</button>
     </Container>
   );

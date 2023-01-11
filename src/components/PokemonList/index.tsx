@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { GenericJSON } from '../../types/GenericJSON';
+import { Pokemon } from '../../types/Pokemon';
 import PokemonListItem from './PokemonListItem';
 
 import { Container, FilterField, PokemonNotFound } from './styles';
+
+type Props = {
+  pokeTeam: Pokemon[];
+  handleSetPokemon: (pokemon: Pokemon, pokeTeam: Pokemon[]) => void;
+  handleRemovePokemon: (pokemon: Pokemon, pokeTeam: Pokemon[]) => void;
+}
 
 type PokemonAPI = {
   name: string;
   url: string;
 }
 
-type Pokemon = {
-  nome: string;
-  imagem: string;
-}
-
-const PokemonList: React.FC = () => {
+const PokemonList: React.FC<Props> = ({pokeTeam, handleSetPokemon, handleRemovePokemon}) => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [filter, setFilter] = useState<string>('');
   const [showValidation, setShowValidation] = useState<boolean>(false)
@@ -110,7 +111,14 @@ const PokemonList: React.FC = () => {
         {
           pokemons.length > 0 ?
             pokemons.map((pokemon, index) =>
-              <PokemonListItem key={index} nome={pokemon.nome} imagem={pokemon.imagem} />
+              <PokemonListItem 
+                key={index} 
+                nome={pokemon.nome} 
+                imagem={pokemon.imagem} 
+                pokeTeam={pokeTeam} 
+                handleSetPokemon={handleSetPokemon} 
+                handleRemovePokemon={handleRemovePokemon}
+              />
             ) :
             <PokemonNotFound>
               <h1>Ops... Não encontramos nenhum pokemon com esse nome.</h1>
