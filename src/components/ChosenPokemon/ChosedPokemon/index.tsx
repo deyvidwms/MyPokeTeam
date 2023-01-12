@@ -24,7 +24,7 @@ const ChosedPokemon: React.FC<DataPokemon> = ({ active, pokeInfo, pokeTeam, hand
         !pokeInfo.isEmpty && 
           <PokemonChosedCard onClick={() => handleRemovePokemon(pokeInfo, pokeTeam)}>
             <img src={pokeInfo.imagem} alt={`Imagem do pokemon ${pokeInfo.nome}`} />
-            <p>{ `${pokeInfo.nome.toUpperCase()[0]}${pokeInfo.nome.substring(1)}` }</p>
+            <p>{ pokeInfo.nome }</p>
           </PokemonChosedCard>
       }
     </Container>

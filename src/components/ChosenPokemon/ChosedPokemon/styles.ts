@@ -65,6 +65,7 @@ export const PokemonChosedCard = styled.div`
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
+    text-transform: capitalize;
     margin-top: 10px;
   }
 

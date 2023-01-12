@@ -61,9 +61,14 @@ const Initial: React.FC = () => {
 
   return (
     <Container>
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Header 
+        darkMode={darkMode} 
+        setDarkMode={setDarkMode} 
+        pokeTeam={pokeTeam} 
+        handleRemovePokemon={handleRemovePokemon} 
+      />
 
-      <Section>
+      <Section style={{marginTop: '50px'}}>
         <Row>
           <Column
             horizontalAlign='center'
@@ -93,7 +98,7 @@ const Initial: React.FC = () => {
             horizontalAlign='center'
             verticalAlign='center'
           >
-            <Title>Selecione seis pokemons abaixo</Title>
+            <Title id="title">Selecione seis pokemons abaixo</Title>
             <Divider width={150} height={3} color='#DDD' />
           </Column>
         </Row>
