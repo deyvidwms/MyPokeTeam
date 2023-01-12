@@ -85,4 +85,19 @@ export const HeaderPokemonList = styled.div`
     background-color: #FFF;
     cursor: pointer;
   }
+
+  @media (max-width: 686px) {
+    /* display: none; */
+    position: fixed;
+    top: initial;
+    bottom: 0;
+
+    background-color: transparent;
+
+    flex-direction: column-reverse;
+    width: fit-content;
+    height: fit-content;
+
+    transform: translateX(${ (props: Props) => (props.isVisible ? '0px' : '-100px') });
+  }
 `;

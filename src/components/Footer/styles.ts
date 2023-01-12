@@ -46,4 +46,9 @@ export const ButtonToTop = styled.button`
     opacity: 0.9;
     box-shadow: none;
   }
+
+  @media (max-width: 686px) {
+    right: 20px;
+    bottom: 40px;
+  }
 `;
