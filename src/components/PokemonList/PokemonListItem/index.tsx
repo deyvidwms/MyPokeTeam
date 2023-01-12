@@ -16,7 +16,7 @@ const PokemonListItem: React.FC<Props> = ({ nome, imagem, pokeTeam, handleSetPok
   return (
     <Container onClick={
       () => {
-        return !isClicked ? (
+        return ( !isClicked || pokeTeam.filter(element => element.nome === nome).length === 0 ) ? (
           setIsClicked(true),
           handleSetPokemon({ nome, imagem }, pokeTeam)
         ) :
