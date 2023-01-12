@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ChosenPokemon from '../../components/ChosenPokemon';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
+import Loading from '../../components/Loading';
 import PokemonList from '../../components/PokemonList';
 import { Pokemon } from '../../types/Pokemon';
 
@@ -61,6 +62,7 @@ const Initial: React.FC = () => {
 
   return (
     <Container>
+      <Loading />
       <Header 
         darkMode={darkMode} 
         setDarkMode={setDarkMode} 

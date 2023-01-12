@@ -74,7 +74,7 @@ export const HeaderPokemonList = styled.div`
   gap: 10px;
   background-color: #EFEFEF;
   padding: 10px;
-  transform: translateY(${ (props: Props) => (props.isVisible ? '60px' : '-60px') });
+  transform: translateY(${ (props: Props) => (props.isVisible ? '60px' : '-100%') });
   transition: all ease 0.3s;
   z-index: 1;
 
