@@ -27,7 +27,7 @@ const Loading: React.FC = () => {
     <Container isVisible={showloading}>
       {
         typeLoading === 0 &&
-          <img src={LoadingGif} alt="Loading Gif" />
+          <img src={LoadingGif} alt="Loading Gif" style={{borderRadius: '100%'}} />
       }
       {
         typeLoading === 1 &&

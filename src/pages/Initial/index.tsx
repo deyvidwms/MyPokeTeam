@@ -22,8 +22,15 @@ const dataDefault = [
   {nome:'', imagem:'', isEmpty: true},
 ];
 
+const getSystemTheme = () => {
+  const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+  if (darkThemeMq.matches)
+    return darkTheme;
+  return lightTheme;
+}
+
 const Initial: React.FC = () => {
-  const [theme, setTheme] = useState<Theme>(lightTheme);
+  const [theme, setTheme] = useState<Theme>(getSystemTheme());
   const [pokeTeam, setPokeTeam] = useState<Pokemon[]>(dataDefault);
 
   const handleSetPokemon = (pokemon: Pokemon, pokeTeam: Pokemon[]) => {  
