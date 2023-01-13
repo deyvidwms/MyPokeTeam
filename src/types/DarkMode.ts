@@ -1,5 +1,6 @@
+import { Theme } from "./Theme";
+
 export interface IToggleDarkMode {
-  darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+  theme: Theme;
   onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
 };

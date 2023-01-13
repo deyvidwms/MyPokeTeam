@@ -45,7 +45,7 @@ export const Title = styled.h1`
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
-  color: #333;
+  color: ${({theme}) => theme.font.primary};
   text-align: center;
 `;
 

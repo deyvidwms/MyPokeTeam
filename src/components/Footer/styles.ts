@@ -17,6 +17,7 @@ export const Container = styled.div`
   p {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
+    color: ${({theme}) => theme.font.primary };
 
     span {
       font-weight: bold;

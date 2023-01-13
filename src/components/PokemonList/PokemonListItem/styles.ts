@@ -14,7 +14,7 @@ export const Container = styled.div`
   width: 300px;
   height: 300px;
   
-  background-color: #E2EAFC;
+  background-color: ${({theme}) => theme.background.tertiary};
   border-radius: 6px;
   box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
   cursor: pointer;

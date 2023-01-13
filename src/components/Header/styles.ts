@@ -26,7 +26,7 @@ export const ThemeModeToggle = styled.div`
   &::before {
     content: " ";
     position: absolute;
-    transform: translateX( ${( props: IToggleDarkMode )=>( props.darkMode ? '20px' : '0')});
+    transform: translateX( ${( props: IToggleDarkMode )=>( props.theme.name === 'dark-theme' ? '20px' : '0')});
     width: 20px;
     height: 20px;
     background-color: #CCC;
@@ -42,7 +42,7 @@ export const HeaderBar = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #FFF;
+  background-color: ${({theme}) => theme.name === "dark-theme" ? theme.background.secondary : theme.background.primary };
   padding: 10px 100px;
   border-bottom: 1px solid #DDD;
   z-index: 2;
@@ -52,7 +52,7 @@ export const HeaderBar = styled.div`
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     font-weight: 900;
-    color: #333;
+    color: ${({theme}) => theme.font.primary};
   }
 
   @media (max-width: 600px) {
@@ -72,7 +72,7 @@ export const HeaderPokemonList = styled.div`
   justify-content: center;
   align-items: center;
   gap: 10px;
-  background-color: #EFEFEF;
+  background-color: ${({theme}) => theme.name === "light-theme" ? theme.background.secondary : theme.background.quaternary};
   padding: 10px;
   transform: translateY(${ (props: Props) => (props.isVisible ? '60px' : '-100%') });
   transition: all ease 0.3s;

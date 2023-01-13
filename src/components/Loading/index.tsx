@@ -15,7 +15,7 @@ const Loading: React.FC = () => {
     const type = (random < 0.5) ? 0 : 1;
     setTypeLoading(type);
     console.log(typeLoading);
-  });
+  }, [typeLoading]);
 
   useEffect(()=>{
     setTimeout( () => {

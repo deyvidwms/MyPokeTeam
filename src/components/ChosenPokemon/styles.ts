@@ -8,7 +8,7 @@ export const Container = styled.div`
   max-width: 1000px;
   padding: 25px 0;
   
-  background-color: #FFF;
+  background-color: ${({theme}) => theme.name === "dark-theme" ? theme.background.secondary : theme.background.primary };
   border-radius: 6px;
   box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
 
